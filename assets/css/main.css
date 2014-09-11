@@ -160,7 +160,7 @@
 }
 
 /* Hide the canvas and display an error message instead */
-@media (max-width: 768px) and (max-height: 400px) {
+@media (orientation:landscape) and (max-height: 400px){
 	.wrapper {
 		display: none;
 	}
