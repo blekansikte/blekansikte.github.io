@@ -92,7 +92,7 @@
 		return false;
 	});
 
-	/*$logo.on('click', function () {
+	$logo.on('click', function () {
 		var tmp = ctx.getImageData(0, 0, ctx.width, ctx.height),
 			ctx2 = $('#canvas2'),
 			sw, sh;
@@ -126,7 +126,7 @@
 
 			data = ctx.getImageData(0, 0, ctx.width, ctx.height);
 		}
-	});*/
+	});
 
 	FastClick.attach(document.body);
 })(jQuery, window, document);
