@@ -112,41 +112,5 @@
 		return false;
 	});
 
-	/*$logo.on('click', function () {
-		var tmp = ctx.getImageData(0, 0, ctx.width, ctx.height),
-			ctx2 = $('#canvas2'),
-			sw, sh;
-
-		if (!data) {
-			data = tmp;
-		}
-
-		if (ctx.width != data.width && ctx.height == data.height)  {
-			sw = ((data.width - ctx.width) / 2) * -1;
-			sh = ctx.height;
-
-			ctx.putImageData(data, sw, 0);
-
-			data = ctx.getImageData(0, 0, ctx.width, ctx.height);
-		}
-
-		if (ctx.height != data.height) {
-			sw = +(data.width / ctx.width).toFixed(2);
-			sh = +(data.height / ctx.height).toFixed(2);
-
-			ctx2.attr({
-				width: data.width,
-				height: data.height
-			});
-
-			ctx2 = ctx2[0];
-			ctx2.getContext('2d').putImageData(data, 0, 0);
-
-			ctx.drawImage(ctx2, 0, 0, ctx.width, ctx.height);
-
-			data = ctx.getImageData(0, 0, ctx.width, ctx.height);
-		}
-	});*/
-
 	FastClick.attach(document.body);
 })(jQuery, window, document);
