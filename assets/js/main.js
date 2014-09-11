@@ -7,19 +7,29 @@
 	var doPaint  = false,
 		mode     = MODE.paint,
 		color    = '#000000',
+		height   = window.innerHeight,
+		width    = window.innerWidth,
+		ratio    = 0.7,
 		$buttons = $('.js-btn-color'),
 		$erase   = $('.js-btn-erase'),
 		$clear   = $('.js-btn-clear'),
 		$logo    = $('#logo'),
 		eraser, data;
 
+	if ((width / height) > ratio) {
+		width = (height * ratio);
+	}
+	else {
+		width -= 40;
+	}
+
 	var ctx = Sketch.create({
 		autoclear: false,
 		container: document.getElementById('canvas'),
 		fullscreen: false,
 		global: false,
-		height: window.innerHeight,
-		width: window.innerHeight * 0.7
+		height: height,
+		width: width
 	});
 
 	ctx.mousedown = function () {
@@ -60,8 +70,18 @@
 	};
 
 	ctx.resize = function () {
-		this.height = window.innerHeight;
-		this.width = window.innerHeight * 0.7;
+		var newHeight = window.innerHeight,
+			newWidth  = window.innerWidth;
+
+		if ((newWidth / newHeight) > ratio) {
+			newWidth = (newHeight * ratio);
+		}
+		else {
+			newWidth -= 40;
+		}
+
+		this.height = newHeight;
+		this.width = newWidth;
 	};
 
 	$(window).on('resize', function () {
