@@ -21,7 +21,7 @@
 		height: window.innerHeight,
 		width: window.innerHeight * 0.7
 	});
-console.log(ctx);
+
 	ctx.mousedown = function () {
 		doPaint = true;
 	};
@@ -92,7 +92,7 @@ console.log(ctx);
 		return false;
 	});
 
-	$logo.on('click', function () {
+	/*$logo.on('click', function () {
 		var tmp = ctx.getImageData(0, 0, ctx.width, ctx.height),
 			ctx2 = $('#canvas2'),
 			sw, sh;
@@ -126,7 +126,7 @@ console.log(ctx);
 
 			data = ctx.getImageData(0, 0, ctx.width, ctx.height);
 		}
-	});
+	});*/
 
 	FastClick.attach(document.body);
 })(jQuery, window, document);
